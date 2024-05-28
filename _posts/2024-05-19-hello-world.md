@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Hello World - My First Blog Post
+title: Hello World
 categories: [Miscellaneous]
 ---
 
 ## Hello World 
 
-My first blog post
+My first blog post!
 

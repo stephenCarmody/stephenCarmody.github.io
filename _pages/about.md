@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This is my personal blog to write about Machine Learning Engineering and AI topics 
+This is my personal blog to where I write to help me learn or oranise my thoughts around topics in Machine Learning Engineering and AI. 
 
 
 ## Work
 
-- Currnetly I work at Glovo in Barcelona Spain, build their Machine Learning Platform and Feature store Platform
+I currnetly work for Glovo in Barcelona, Spain. I've been working to build both an internal Machine Learning Platform and a Feature Store Platform
