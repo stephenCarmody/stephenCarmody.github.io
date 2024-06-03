@@ -32,7 +32,7 @@ Overfitting](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 ### Fine-Tuning & PEFT
 
 - [[2012] LoRa: Low-Rank Adaption of Large Language Models](https://arxiv.org/abs/2106.09685)
-- [[2023] Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2106.09685)
+- [[2023] Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2303.15647)
 
 <br>
 

@@ -54,10 +54,10 @@ And how do we get from something like “The quick brown fox…” into the fina
 
 1. First we need to break raw text into smaller building blocks (sentences, words, characters, etc..) through a process called Tokenisation. 
 2. Then we need to convert our building blocks into numerical representations, called Embeddings. 
-3. Finally, we need to give the Transformer a way to know how words are ordered. Transformers are super fast because they don’t process things in sequence but in parallel, but this means they don’t inherently understand word order. We use positional encodings to give it some notion of the sequence of words in a text.
+3. Finally, we need to give the Transformer a way to know how words are ordered. Transformers are incredibly fast because they don’t process data sequentially, but in parallel, but this means they don’t inherently understand word order. We use positional encodings to give it some notion of the sequence of words in a text.
 
 ### Tokenization 
-As I previously mentioned, we’ll we want to take large pieces of text and break them down into smaller blocks. It’s this process of breaking down raw input text to smaller blocks is called tokenisation, with the resulting blocks known as tokens.
+As I previously mentioned, we’ll want to take large pieces of text and break them down into smaller blocks. It’s this process of breaking down raw input text to smaller blocks that we call tokenisation, with the resulting blocks known as tokens.
 
 
 There are many different tokenizers available each with it’s own pros and cons (see this HuggingFace [article](https://huggingface.co/docs/transformers/en/tokenizer_summary)). See Andrej Karpathy’s [Twitter thread](https://twitter.com/karpathy/status/1759996551378940395) for more details on the challenges faced with Tokenizers.
@@ -79,7 +79,7 @@ Word embeddings are necessary as we need to give the architecture some machine i
 
 ### Positional Encodings
 
-The positional encodings are a tool to give the Transformer some sense of the order of words, as the models attention mechanism doesn’t naturally take the order of words into account like RNNS do. 
+The positional encodings are a tool to give the Transformer some sense of the order of words, as the models attention mechanism doesn’t naturally take the order of words into account like RNNs do. 
 
 In the paper the authors used both hand crafted positional encodings and learned ones, with both performing equally well.   
 
