@@ -3,7 +3,8 @@ layout: default
 ---
 
 {% assign blog_posts_page = site.pages | where: "title", "Blog Posts" | first %}
+<h1>{{ blog_posts_page.title }}</h1>
+ 
 <div class="archive-content">
-  {{ blog_posts_page.title }}
   {{ blog_posts_page.content }}
 </div>
