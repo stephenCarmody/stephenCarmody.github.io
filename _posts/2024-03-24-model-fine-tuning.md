@@ -140,7 +140,7 @@ Before going further, a quick reminder of how we can view neural net training. D
 
 Inspired the insight above, the authors hypothesised that this update matrix ($\Delta W$) is also of low rank and be decomposed into 2 much smaller matrices giving, $∆W = BA$ , with $B$ and $A$ having dimensions of $B ∈ R^{d×r} , A ∈ R^{r×k}$. Here $r$  is much smaller than the dimensions of the original matrix and is a parameter chosen to balance accuracy, computation, and memory efficiency.
 
-<img src="/images/peft/lora.png" alt="LoRa"/>
+<img src="/images/peft/lora_matrix.png" alt="LoRa"/>
 
 The great thing about LoRa is that it incurs little or no inference latency, depending on how you serve (more on that in a second). It has shown to have have excellent accuracy from small to large models, so it scales well. In tests on GTP3 it reduced the memory required during training by 3X and the parameter count/checkpoint size by 10,000X when $r$ = 4.
 
