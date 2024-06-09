@@ -3,7 +3,7 @@ layout: page
 permalink: /papers/
 title: Interesting Papers
 ---
-This is a collection of papers I've read and enjoyed and feel like have the most bang for buck in understanding the current DL / LLM landscape. 
+This is a collection of papers I've read and enjoyed and feel like have the most ROI in understanding the current DL / LLM landscape. 
 
 <br>
 
@@ -18,6 +18,8 @@ This is a collection of papers I've read and enjoyed and feel like have the most
 - [[2017] Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 - [[2018] Generating Wikipedia by Summarizing Long Sequences](https://arxiv.org/abs/1801.10198)
 - [[2018] Improving Language Understand by Generative Pre-Training](https://openai.com/index/language-unsupervised/)
+- [[2018] Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+- [[2022] Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/pdf/2203.02155)
 
 <br>
 
@@ -39,3 +41,5 @@ Overfitting](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 ### **Production and Deployment**
 
 - [[2023] Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
+
+<br>
