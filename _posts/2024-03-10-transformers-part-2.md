@@ -4,7 +4,7 @@ title: An Introduction to the Transformer Architecture (Part 2)
 categories: [AI, NLP]
 ---
 
-This blog post is part 2 of a 2 part series exploring the Transformer architecture. Read [Part 1](ransformers-part-1/) if you haven't already had the chance. 
+This blog post is part 2 of a 2 part series exploring the Transformer architecture. Read [Part 1](../transformers-part-1/) if you haven't already had the chance. 
 
 <br>
 

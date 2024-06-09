@@ -246,7 +246,7 @@ In the image below we can see 2 requests that have overlapping blocks of memory,
 
 ### FlashAttention [(Paper)](https://arxiv.org/abs/2205.14135)
 
-FlashAttention is a exact method to improve the efficiency of the attention calculation by reducing memory read / writes and without the need store intermediate results in memory. It does this by “fusing” (grouping) operations into one step, and taking advantage of a GPUs higher speed SRAM (which is an order of magnitude fast than HBM). As we’ve said before, transformers are largely memory bound so any improvements we have make in reducing the memory footprint will greatly increase efficiency.
+FlashAttention is an exact method to improve the efficiency of the attention calculation by reducing memory read / writes and without the need store intermediate results in memory. It does this by “fusing” (grouping) operations into one step, and taking advantage of a GPUs higher speed SRAM (which is an order of magnitude fast than HBM). As we’ve said before, transformers are largely memory bound so any improvements we have make in reducing the memory footprint will greatly increase efficiency.
 
 <img src="/images/llm-inference/memory_hierarchy.png" alt="Memory Hierarchy"/>
 <p align="center">

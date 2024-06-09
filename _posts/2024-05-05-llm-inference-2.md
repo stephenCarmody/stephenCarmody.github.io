@@ -6,6 +6,6 @@ categories: [AI]
 
 # Coming Soon...
 
-- Dsitributed Inference 
+- Distributed Inference 
 - Batching Strategies
 - Model Compression
