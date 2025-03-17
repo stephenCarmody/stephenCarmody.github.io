@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'A Guide to Vector Databases & Their Uses'
+title: 'Vector Databases Explained: Search in era of AI'
 categories: [AI, Infra]
 ---
 
