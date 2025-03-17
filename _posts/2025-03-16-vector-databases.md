@@ -12,7 +12,7 @@ Before diving into the ins and outs of vector databases, let's lay some groundwo
 
 ## What are embeddings?
 
-At their core, embeddings are dense vectors of floating-point numbers—dense meaning they typically don't have empty or zero values. But why are these numbers so powerful? Because they're more than just numbers; they're compact, numerical representations of complex things like words, ideas, images, or sounds. They distill rich, meaningful information into a format that computers can work with efficiently, capturing the essence of our world in numbers.
+At their core, embeddings are dense vectors of floating-point numbers, dense meaning they typically don't have empty or zero values. But why are these numbers so powerful? Because they're more than just numbers; they're compact, numerical representations of complex things like words, ideas, images, or sounds. They distill rich, meaningful information into a format that computers can work with efficiently, capturing the essence of our world in numbers.
 
 <br>
 
@@ -51,13 +51,14 @@ It's all about trade-offs: choosing the right size depends on whether you need e
 
 # What Problems do Vector Databases Solve?
 
-Now that we understand embeddings, it's easier to see why vector databases are such a game-changer—but let's break it down a bit more. Traditional databases come in two flavors: they either enforce strict schemas for structured data or handle unstructured data like blobs and documents. The problem? Neither is built for the kind of fuzzy, non-exact searches we need today—things like finding similar concepts, matching image content, or identifying sounds. They just don't get semantics or nuance.
+Now that we understand embeddings, it's easier to see why vector databases are such a game-changer, but let's break it down a bit more. Traditional databases come in two flavors: they either enforce strict schemas for structured data or handle unstructured data like blobs and documents. The problem? Neither is built for the kind of fuzzy, non-exact searches we need today—things like finding similar concepts, matching image content, or identifying sounds. They just don't get semantics or nuance.
 
 <br>
 
 # Under the Hood: Vector Search
 
-Now that we know what embeddings are, how to create them, and the problems vector databases solve, let's dig into how search actually works in a vector database—the magic that powers all those incredible use cases.
+Now that we know what embeddings are, how to create them, and the problems vector databases solve, let's dig into how search actually works in a vector database.
+
 
 First to understand the boarder process, let's take the example of a users search query to find similar items. How does this process look like with a vector database? The user types a query into the search bar, which is sent to a neural network that generates an embedding from the raw text. This embedding is then used to perform a nearest neighbour search in the vector database, returning the top K items that most closely match the user's query.
 
@@ -67,9 +68,9 @@ First to understand the boarder process, let's take the example of a users searc
 
 ## How to search at scale
 
-Every database needs a way to find data quickly and efficiently, especially when dealing with massive datasets. Traditional databases rely on indexes, which are essentially shortcuts to locate rows or documents based on things like IDs or values. But when it comes to vectors, the game changes. Instead of exact matches, we're searching for "nearest neighbors"—the vectors closest to a given query in high-dimensional space.
+Every database needs a way to find data quickly and efficiently, especially when dealing with massive datasets. Traditional databases rely on indexes, which are essentially shortcuts to locate rows or documents based on things like IDs or values. But when it comes to vectors, the game changes. Instead of exact matches, we're searching for "nearest neighbors", the vectors closest to a given query in high-dimensional space.
 
-But finding those "nearest neighbors" isn't as simple as it sounds. The naive approach—calculating the exact distance between every vector and your query—works fine for small datasets but completely falls apart at scale. Imagine comparing millions or even billions of vectors one by one, it's computationally expensive and painfully slow. This is why exact nearest neighbors isn't practical for real-world applications, where speed and scalability are key. In the next we will explore how to solve with with Approximate Nearest Neighbours (ANN).
+But finding those "nearest neighbors" isn't as simple as it sounds. The naive approach, calculating the exact distance between every vector and your query, works fine for small datasets but completely falls apart at scale. Imagine comparing millions or even billions of vectors one by one, it's computationally expensive and painfully slow. This is why exact nearest neighbors isn't practical for real-world applications, where speed and scalability are key. In the next we will explore how to solve with with Approximate Nearest Neighbours (ANN).
 
 <br>
 
@@ -172,7 +173,7 @@ Key considerations in PQ implementation:
 
 ## Tree Based / Space Partitioning Methods
 
-Tree and space partitioning methods take a divide-and-conquer approach to organizing vectors. These methods break down the high-dimensional space into smaller regions, making search more efficient by only exploring relevant portions of the space. Let's take a look at the most used space based partitioning method:
+Tree and space partitioning methods take a divide & conquer approach to organizing vectors. These methods break down the high-dimensional space into smaller regions, making search more efficient by only exploring relevant portions of the space. Let's take a look at the most used space based partitioning method:
 
 <br>
 
@@ -186,7 +187,7 @@ IVF uses clustering to partition the high-dimensional vector space. The process 
 
 <br>
 
-The beauty of IVF lies in its simplicity. During search, we first find the closest centroids to our query vector, and then only search through the vectors in those clusters. The `nprobe` parameter controls how many nearest clusters we explore - a crucial tuning parameter for handling edge cases. For example, if a query vector falls near the boundary between clusters, we might miss relevant results by only searching one cluster. By increasing `nprobe`, we can search neighboring clusters as well, trading speed for accuracy.
+The beauty of IVF lies in its simplicity. During search, we first find the closest centroids to our query vector, and then only search through the vectors in those clusters. The `nprobe` parameter controls how many nearest clusters we explore, a crucial tuning parameter for handling edge cases. For example, if a query vector falls near the boundary between clusters, we might miss relevant results by only searching one cluster. By increasing `nprobe`, we can search neighboring clusters as well, trading speed for accuracy.
 
 <br>
 
@@ -211,7 +212,7 @@ Vector databases face several key challenges that need to be addressed for optim
 
 - **Reindexing**: As new vectors are added, the index structure needs updating. While methods like IVF allow for incremental updates by assigning vectors to existing clusters, this can lead to degraded performance over time as the original clustering becomes less optimal.
 
-- **Memory Usage**: High-dimensional vectors consume significant memory - even modest datasets (1M vectors) can require several GBs. Techniques like Product Quantization and dimensionality reduction help, but involve trade-offs between memory efficiency and search accuracy.
+- **Memory Usage**: High-dimensional vectors consume significant memory. Even modest datasets (1M vectors) can require several GBs. Techniques like Product Quantization and dimensionality reduction help, but involve trade-offs between memory efficiency and search accuracy.
 
 - **Filtering**: Combining traditional database filtering (e.g., metadata queries) with vector similarity search is challenging. The index structures optimized for vector search don't naturally support these additional constraints.
 
